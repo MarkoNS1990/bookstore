@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 function BooksForm() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Action');
-  useEffect(() => {
-    console.log(category);
-  }, [category]);
+
   const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
   const handleInputChange = (e) => {
     setTitle(e.target.value);
-    console.log(title);
   };
 
   const handleSelectChange = (e) => {
@@ -21,9 +18,9 @@ function BooksForm() {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    const book = { id: Math.random() * 1000, title, category };
+    const book = { id: Math.ceil(Math.random() * 1000), title, category };
     dispatch({ type: 'CREATE_BOOK', book });
-    setCategory('');
+    setCategory('Action');
     setTitle('');
   };
 
