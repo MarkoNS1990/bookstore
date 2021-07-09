@@ -1,65 +1,64 @@
-# React and Redux
+# Bookstore
 
-If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
+## Description
 
-## Set-up GitHub Actions
+Bookstore project for managing books.
 
-This GitHub Action is going to run [ESLint](https://eslint.org/) and [Stylelint](https://stylelint.io/) to help you find style issues.
+## Built With
 
-[Stylelint](https://stylelint.io/) is a linter for your stylesheets that helps you avoid errors and enforce conventions.
+- React
+- Node.js
+- React-DOM
+- Redux
+- npm
+- CSS
+- ES6
 
-[ESLint](https://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+## Set up this projecect locally
 
-Please do the following **steps in this order**:
+- Open the terminal in the directory where you want to install the app;
+- Run command `https://github.com/MarkoNS1990/bookstore` which will clone the project;
+- Switch to the main directory of project using cd;
+- Run `npm install` in your computer terminal to install dependencies (you will need Node.js installed on your machine);
+- Run `npm start`;
 
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-    - **Remember** to use the file linked above
-    - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub Actions:
+## How it looks
 
-![gh actions checks](../assets/images/gh-actions-eslint-stylelint-checks.png)
 
-Click on the `Details` link to see the full output and the errors that need to be fixed:
+![]() ![]() ![]()
 
-![gh actions failing checks](../assets/images/gh-actions-html-css-failing-checks.png)
+## Testing
 
-## Set-up linters in your local env
+To run tests use:
 
-### ESLint
+`npm test`
 
-1. Run `npm install --save-dev eslint@7.11.x eslint-config-airbnb@18.1.x eslint-plugin-import@2.22.x eslint-plugin-jsx-a11y@6.2.x eslint-plugin-react@7.20.x eslint-plugin-react-hooks@2.5.x babel-eslint@10.1.x` (not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
-2. Copy [.eslintrc.json](./.eslintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx eslint .` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+### Deployment
 
-### Stylelint
+This application is deployed on [Heroku]().
 
-1. Run
+## Authors
 
-   ```
-   npm install --save-dev stylelint@13.3.x stylelint-scss@3.17.x stylelint-config-standard@20.0.x stylelint-csstree-validator
-   ```
+👤 **Ilie Babcenco**
 
-   (not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
+[![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/iliebabcenco) [![](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ilie-babcenco-72459a1b1/) [![](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/BabcencoIlie)
 
-2. Copy [.stylelintrc.json](./.stylelintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run
-   ```
-   npx stylelint "**/*.{css,scss}"
-   ```
-   on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+👤 **Marko Zecevic**
 
-## Test/Deployment Actions
+[![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MarkoNS1990) [![](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/zecevicmarko/) 
 
-Feel free to add your own deployment actions which can run your tests and deploy to Heroku.
+## 🤝 Contributing
 
-Make sure that you do not modify the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) but that you create a separe GitHub Action workflow file for that.
+Contributions, issues, and feature requests are welcome!
+
+If you want to contribute, you can clone this project or fork it.
+
+If you found an issue, feel free to check the [issues page](https://github.com/MarkoNS1990/bookstore/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Microverse](https://www.microverse.org/)
