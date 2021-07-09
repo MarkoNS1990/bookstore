@@ -1,6 +1,9 @@
 {
   "name": "bookstore",
   "version": "0.1.0",
+  "engines": {
+    "node": "14.x"
+  },
   "private": true,
   "dependencies": {
     "cra-template": "1.1.2",
