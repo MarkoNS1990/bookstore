@@ -35,7 +35,7 @@ To run tests use:
 
 ### Deployment
 
-This application is deployed on [Heroku]().
+This application is deployed on [Heroku](https://best-bookstore.herokuapp.com/).
 
 ## Authors
 
