@@ -1,5 +1,15 @@
-import {createStore} from 'redux'
+const createBook = (book) => {
+  return {
+    type: 'CREATE_BOOK',
+    book
+  }
+}
 
- 
+const removeBook = (book) => {
+  return {
+    type: 'REMOVE_BOOK',
+    book
+  }
+}
 
-const store = createStore(reducerCounter)
+export { createBook, removeBook }
