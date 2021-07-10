@@ -3,12 +3,9 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './components/App';
-import booksReducer from './reducers/books';
+import reducer from './reducers/index';
 
-const initialState = [{ id: Math.ceil(Math.random() * 1000), title: 'title1', category: 'Learning' },
-  { id: Math.ceil(Math.random() * 1000), title: 'title412421', category: 'Action' },
-  { id: Math.ceil(Math.random() * 1000), title: 'title43214', category: 'Sci-Fi' }];
-const store = createStore(booksReducer, initialState);
+const store = createStore(reducer);
 
 ReactDOM.render(
   <React.StrictMode>
