@@ -16,7 +16,7 @@ function CategoryFilter() {
 
   return (
     <div className="categories-div">
-      <select className="form-select" aria-label="Default select example" onChange={(e) => handleFilterChange(e)} value={filter}>
+      <select id="categories" className="form-select" aria-label="Default select example" onChange={(e) => handleFilterChange(e)} value={filter}>
         {categories.map((cat) => <option key={Math.random() * 1000}>{cat}</option>)}
 
       </select>

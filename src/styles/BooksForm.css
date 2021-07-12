@@ -1,0 +1,30 @@
+.form-div {
+  padding: 2rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.form {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.title-input {
+  width: 60%;
+  margin-right: 2rem;
+  padding: 0.7rem;
+}
+
+.form-select {
+  width: 20%;
+  margin-right: 2rem;
+}
+
+.submit {
+  width: 8rem;
+}
+
+.form-title {}
