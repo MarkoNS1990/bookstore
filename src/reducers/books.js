@@ -1,4 +1,4 @@
-const initialState = [{ id: Math.ceil(Math.random() * 1000), title: 'title1', category: 'Learning' },
+export const initialState = [{ id: Math.ceil(Math.random() * 1000), title: 'title1', category: 'Learning' },
   { id: Math.ceil(Math.random() * 1000), title: 'title412421', category: 'Action' },
   { id: Math.ceil(Math.random() * 1000), title: 'title43214', category: 'Sci-Fi' }];
 
