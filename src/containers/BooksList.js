@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from '../components/Book';
-import CategoryFilter from '../components/CategoryFilter';
 
 function BooksList() {
   const filter = useSelector((state) => state.filter);
@@ -19,8 +18,7 @@ function BooksList() {
   return (
     <>
 
-      <CategoryFilter />
-      <table>
+      <table id="books-table">
         <thead>
           <tr>
             <td>ID</td>
