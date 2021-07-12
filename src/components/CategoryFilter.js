@@ -10,7 +10,6 @@ function CategoryFilter() {
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
     const filter = e.target.value;
-    console.log(filter);
     dispatch({ type: 'CHANGE_FILTER', filter });
   };
 

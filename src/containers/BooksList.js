@@ -7,10 +7,8 @@ function BooksList() {
   const filter = useSelector((state) => state.filter);
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
-  let filtered;
-  if (filter === 'All') {
-    filtered = books;
-  } else {
+  let filtered = books;
+  if (filter !== 'All') {
     filtered = books.filter((book) => book.category === filter);
   }
 
