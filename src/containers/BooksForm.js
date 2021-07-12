@@ -5,6 +5,7 @@ function BooksForm() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Action');
+  const [error, setError] = useState('');
 
   const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
@@ -18,10 +19,15 @@ function BooksForm() {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    const book = { id: Math.ceil(Math.random() * 1000), title, category };
-    dispatch({ type: 'CREATE_BOOK', book });
-    setCategory('Action');
-    setTitle('');
+    if (title !== '') {
+      const book = { id: Math.ceil(Math.random() * 1000), title, category };
+      dispatch({ type: 'CREATE_BOOK', book });
+      setCategory('Action');
+      setTitle('');
+      setError('');
+    } else {
+      setError('Please enter a title');
+    }
   };
 
   return (
@@ -32,6 +38,7 @@ function BooksForm() {
 
       </select>
       <button type="submit">Submit</button>
+      <p>{error}</p>
     </form>
   );
 }
