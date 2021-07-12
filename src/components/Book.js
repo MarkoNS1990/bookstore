@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import '../styles/Book.css';
+import EditBookForm from '../containers/EditBookForm';
 
 function Book({ book, handleRemoveBook }) {
   const { title, category } = book;
@@ -14,7 +15,7 @@ function Book({ book, handleRemoveBook }) {
           <div className="action-buttons">
             <a className="item-link" href="#book">Comments</a>
             <a className="item-link remove" onClick={handleRemoveBook} href="#book">Remove</a>
-            <a className="item-link" href="#book">Edit</a>
+            <a className="item-link" href="#book" onClick={handleEditClick}>Edit</a>
           </div>
         </div>
         <div className="middle">
@@ -29,6 +30,7 @@ function Book({ book, handleRemoveBook }) {
           <button className="btn btn-primary chapter-btn" type="button">UPDATE PROGRESS</button>
 
         </div>
+        <EditBookForm book={book} />
       </div>
 
     </>

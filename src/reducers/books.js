@@ -8,6 +8,8 @@ const books = (state = initialState, action) => {
       return [...state, action.book];
     case 'REMOVE_BOOK':
       return [...state.filter((book) => book !== action.book)];
+    case 'EDIT_BOOK':
+      return [...state.filter((book) => book.id !== action.book.id), action.book];
     default:
       return state;
   }
