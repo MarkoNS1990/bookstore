@@ -18,23 +18,11 @@ function BooksList() {
   return (
     <>
 
-      <table id="books-table">
-        <thead>
-          <tr>
-            <td>ID</td>
-            <td>Title</td>
-            <td>Category</td>
-            <td>Remove</td>
-          </tr>
-        </thead>
-        <tbody>
-          {filtered && filtered.map((book) => (
-            <Book key={book.id} book={book} handleRemoveBook={() => handleRemoveBook(book)} />
+      {filtered && filtered.map((book) => (
+        <Book key={book.id} book={book} handleRemoveBook={() => handleRemoveBook(book)} />
 
-          ))}
-        </tbody>
+      ))}
 
-      </table>
     </>
   );
 }

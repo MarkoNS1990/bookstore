@@ -1,5 +1,6 @@
 body {
   font-family: Roboto, Helvetica, sans-serif;
+  background-color: rgb(245, 246, 250);
 }
 
 .nav-bar {
@@ -9,6 +10,7 @@ body {
   margin-bottom: 3rem;
   display: flex;
   justify-content: space-between;
+  background-color: #fff;
 }
 
 .nav-list {
@@ -40,7 +42,6 @@ body {
   line-height: normal;
   letter-spacing: normal;
   color: rgb(2, 144, 255);
-
 }
 
 .nav-a {

@@ -1,15 +1,37 @@
 import PropTypes from 'prop-types';
+import '../styles/Book.css';
 
 function Book({ book, handleRemoveBook }) {
-  const { id, title, category } = book;
+  const { title, category } = book;
 
   return (
-    <tr>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
-      <td><button type="button" onClick={handleRemoveBook}>Remove book</button></td>
-    </tr>
+    <>
+      <div className="item" id="book">
+        <div className="left">
+          <p className="category">{category}</p>
+          <h3 className="title">{title}</h3>
+          <p className="author">Suzanne Collins</p>
+          <div className="action-buttons">
+            <a className="item-link" href="#book">Comments</a>
+            <a className="item-link remove" onClick={handleRemoveBook} href="#book">Remove</a>
+            <a className="item-link" href="#book">Edit</a>
+          </div>
+        </div>
+        <div className="middle">
+          64%
+          <br />
+          {' '}
+          Completed
+        </div>
+        <div className="right">
+          <p className="current">Current Chapter</p>
+          <p className="chapter">Chapter 17</p>
+          <button className="btn btn-primary chapter-btn" type="button">UPDATE PROGRESS</button>
+
+        </div>
+      </div>
+
+    </>
   );
 }
 
