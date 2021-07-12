@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 
 function Book({ book, handleRemoveBook }) {
   const { id, title, category } = book;
+
   return (
     <tr>
       <td>{id}</td>
