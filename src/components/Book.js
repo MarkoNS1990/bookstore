@@ -1,10 +1,22 @@
 import PropTypes from 'prop-types';
 import '../styles/Book.css';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import React, { useState } from 'react';
+import { CircularProgress } from '@material-ui/core';
+import EditBookForm from '../containers/EditBookForm';
+import Comments from './Comments';
+import '../styles/Comments.css';
 
 function Book({ book, handleRemoveBook }) {
   const { title, category } = book;
+  const [toggleShow, setToggleShow] = useState(false);
+  const [toggleComments, setToggleComments] = useState(false);
   const progress = Math.floor(Math.random() * 100);
+  const handleEditClick = () => {
+    setToggleShow(!toggleShow);
+  };
+  const handleCommentsClick = () => {
+    setToggleComments(!toggleComments);
+  };
 
   return (
     <>
@@ -14,9 +26,9 @@ function Book({ book, handleRemoveBook }) {
           <h3 className="title">{title}</h3>
           <p className="author">Suzanne Collins</p>
           <div className="action-buttons">
-            <button type="button" className="item-link">Comments</button>
+            <button type="button" className="item-link" onClick={handleCommentsClick}>Comments</button>
             <button type="button" className="item-link remove" onClick={handleRemoveBook}>Remove</button>
-            <button type="button" className="item-link">Edit</button>
+            <button type="button" className="item-link" onClick={handleEditClick}>Edit</button>
           </div>
         </div>
         <div className="middle">
@@ -33,8 +45,10 @@ function Book({ book, handleRemoveBook }) {
           <button className="right-element btn btn-primary chapter-btn" type="button">UPDATE PROGRESS</button>
 
         </div>
-      </div>
 
+      </div>
+      <EditBookForm book={book} toggleShow={toggleShow} setToggleShow={setToggleShow} />
+      <Comments setToggleComments={setToggleComments} toggleComments={toggleComments} />
     </>
   );
 }
