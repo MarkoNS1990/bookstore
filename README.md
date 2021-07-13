@@ -25,7 +25,7 @@ Bookstore project for managing books.
 ## How it looks
 
 
-![](src/assets/bookstore.png)
+![](src/assets/ss.png)
 
 
 ### Deployment
