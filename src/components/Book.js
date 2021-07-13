@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import '../styles/Book.css';
 import React, { useState } from 'react';
+import { CircularProgress } from '@material-ui/core';
 import EditBookForm from '../containers/EditBookForm';
 import Comments from './Comments';
 import '../styles/Comments.css';
@@ -9,6 +10,7 @@ function Book({ book, handleRemoveBook }) {
   const { title, category } = book;
   const [toggleShow, setToggleShow] = useState(false);
   const [toggleComments, setToggleComments] = useState(false);
+  const progress = Math.floor(Math.random() * 100);
   const handleEditClick = () => {
     setToggleShow(!toggleShow);
   };
