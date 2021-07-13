@@ -1,5 +1,5 @@
 .item {
-  width: 35rem;
+  width: 70%;
   padding: 5rem;
   height: 10.625rem;
   margin: 2.313rem auto 0;
@@ -12,21 +12,23 @@
 }
 
 .category {
+  width: 3.063rem;
   height: 1.125rem;
+  margin: 0 2.438rem 0 0;
   opacity: 0.5;
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: Montserrat, Helvetica, sans-serif;
   font-size: 0.875rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: gray;
+  color: #121212;
 }
 
 .title {
   height: 1.813rem;
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', Helvetica, sans-serif;
   font-size: 1.375rem;
   font-weight: bold;
   font-stretch: normal;
@@ -38,7 +40,7 @@
 
 .author {
   margin: 0.25rem 0 0;
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', Helvetica, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
@@ -50,9 +52,11 @@
 }
 
 .item-link {
+  border: none;
+  background-color: white;
   height: 1.188rem;
   margin: 0.188rem 0.938rem 0.125rem 0;
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', Helvetica, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
@@ -71,28 +75,22 @@
 
 .middle {
   font-size: 1.2rem;
+  font-family: Montserrat, Helvetica, sans-serif;
 }
 
 .current {
-  width: 7rem;
-  height: 1.125rem;
-  margin: 0.063rem 3.625rem 0 3.688rem;
   opacity: 0.5;
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', Helvetica, sans-serif;
   font-size: 0.813rem;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: gray;
+  color: #121212;
 }
 
 .chapter {
-  width: 4.2rem;
-  height: 1.313rem;
-  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
-  font-family: Roboto, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 300;
   font-stretch: normal;
@@ -103,7 +101,6 @@
 }
 
 .chapter-btn {
-  font-family: Roboto, Helvetica, sans-serif;
   font-size: 0.6rem;
   font-weight: 300;
   font-stretch: normal;
@@ -116,8 +113,18 @@
 }
 
 .right {
+  font-family: 'Roboto Slab', Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1.3rem;
+}
+
+.action-buttons {
+  display: flex;
+}
+
+.right-element {
+  margin-top: 1rem;
 }

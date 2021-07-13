@@ -1,4 +1,5 @@
 .form-div {
+  font-family: Montserrat, Helvetica, sans-serif;
   padding: 2rem;
   margin: 2rem auto;
   display: flex;
@@ -17,11 +18,37 @@
   padding: 0.7rem;
 }
 
+.title-input::placeholder {
+  color: #c4c4c4;
+}
+
+.option {
+  color: black;
+}
+
 .form-select {
   width: 20%;
   margin-right: 2rem;
+  color: #c4c4c4;
+}
+
+.form-title {
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  margin-top: 1rem;
+  color: #888;
 }
 
 .submit {
-  width: 8rem;
+  width: 10rem;
+  height: 2.7rem;
+}
+
+.error-p {
+  color: red;
 }
