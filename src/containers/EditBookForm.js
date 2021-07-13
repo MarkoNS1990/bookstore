@@ -1,14 +1,16 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import '../styles/EditBookForm.css';
 
-function EditBookForm({ book }) {
+function EditBookForm({ book, toggleShow, setToggleShow }) {
   const [title, setTitle] = useState(book.title);
   const [category, setCategory] = useState(book.category);
   const [error, setError] = useState('');
 
   const dispatch = useDispatch();
   const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-  const books = useSelector((state) => state.books);
+  // const books = useSelector((state) => state.books);
 
   const handleInputChange = (e) => {
     setTitle(e.target.value);
@@ -21,19 +23,23 @@ function EditBookForm({ book }) {
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (title !== '') {
-      const book = { id: Math.ceil(Math.random() * 1000), title, category };
-      dispatch({ type: 'EDIT_BOOK', book });
+      const editedBook = { id: book.id, title, category };
+      console.log(editedBook);
+      dispatch({ type: 'EDIT_BOOK', editedBook });
       setCategory('Action');
       setTitle('');
       setError('');
+      setToggleShow(false);
     } else {
       setError('Please enter a title');
     }
   };
 
   return (
+    toggleShow
+    && (
     <div>
-      <div className="form-div">
+      <div className="form-div edit">
         <hr />
         <h3 className="form-title">EDIT BOOK</h3>
         <form onSubmit={onFormSubmit} className="form">
@@ -47,7 +53,17 @@ function EditBookForm({ book }) {
         </form>
       </div>
     </div>
+    )
   );
 }
+EditBookForm.propTypes = {
+  book: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
 
+  }).isRequired,
+  toggleShow: PropTypes.bool.isRequired,
+  setToggleShow: PropTypes.func.isRequired,
+};
 export default EditBookForm;

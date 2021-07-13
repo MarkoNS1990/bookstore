@@ -1,9 +1,20 @@
 import PropTypes from 'prop-types';
 import '../styles/Book.css';
+import React, { useState } from 'react';
 import EditBookForm from '../containers/EditBookForm';
+import Comments from './Comments';
+import '../styles/Comments.css';
 
 function Book({ book, handleRemoveBook }) {
   const { title, category } = book;
+  const [toggleShow, setToggleShow] = useState(false);
+  const [toggleComments, setToggleComments] = useState(false);
+  const handleEditClick = () => {
+    setToggleShow(!toggleShow);
+  };
+  const handleCommentsClick = () => {
+    setToggleComments(!toggleComments);
+  };
 
   return (
     <>
@@ -13,7 +24,7 @@ function Book({ book, handleRemoveBook }) {
           <h3 className="title">{title}</h3>
           <p className="author">Suzanne Collins</p>
           <div className="action-buttons">
-            <a className="item-link" href="#book">Comments</a>
+            <a className="item-link" href="#book" onClick={handleCommentsClick}>Comments</a>
             <a className="item-link remove" onClick={handleRemoveBook} href="#book">Remove</a>
             <a className="item-link" href="#book" onClick={handleEditClick}>Edit</a>
           </div>
@@ -30,9 +41,10 @@ function Book({ book, handleRemoveBook }) {
           <button className="btn btn-primary chapter-btn" type="button">UPDATE PROGRESS</button>
 
         </div>
-        <EditBookForm book={book} />
-      </div>
 
+      </div>
+      <EditBookForm book={book} toggleShow={toggleShow} setToggleShow={setToggleShow} />
+      <Comments setToggleComments={setToggleComments} toggleComments={toggleComments} />
     </>
   );
 }
