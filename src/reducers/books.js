@@ -8,13 +8,12 @@ const books = (state = initialState, action) => {
       return [...state, action.book];
     case 'REMOVE_BOOK':
       return [...state.filter((book) => book !== action.book)];
-    case 'EDIT_BOOK': {
+    case 'EDIT_BOOK':{
+      state.splice(state.indexOf(action.editedBook),1,)
+      console.log(action);
       console.log(state);
-      const newArray = [...state];
-
       return [...state.filter((book) => book.id !== action.editedook.id), action.book];
     }
-
     default:
       return state;
   }
