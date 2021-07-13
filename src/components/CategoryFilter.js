@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import '../styles/CategoryFilter.css';
 
 function CategoryFilter() {
   const [filter, setFilter] = useState('All');
   const dispatch = useDispatch();
-
   const categories = ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
   const handleFilterChange = (e) => {
@@ -14,10 +14,10 @@ function CategoryFilter() {
   };
 
   return (
-    <div>
-      <select onChange={(e) => handleFilterChange(e)} value={filter}>
+    <div className="categories-div">
+      <select id="categories" className="categories-select" onChange={(e) => handleFilterChange(e)} value={filter}>
+        <option value="All">CATEGORIES</option>
         {categories.map((cat) => <option key={Math.random() * 1000}>{cat}</option>)}
-
       </select>
     </div>
   );

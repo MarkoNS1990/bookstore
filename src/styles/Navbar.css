@@ -1,0 +1,82 @@
+body {
+  background-color: rgb(245, 246, 250);
+}
+
+.nav-bar {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.nav-list-item {
+  margin: 1.5rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+}
+
+.logo-a {
+  background-color: white;
+  border: none;
+  width: 15rem;
+  height: 2.313rem;
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+.nav-a-selected {
+  border: none;
+  background-color: white;
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.categories-select {
+  border: none;
+  opacity: 0.5;
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.user-div {
+  border: solid 1px #e8e8e8;
+  border-radius: 45%;
+  padding: 0.5rem;
+  margin: 1.5rem;
+}
+
+.fa-user {
+  color: #0290ff;
+  margin-left: 0.15rem;
+  margin-top: 0.15rem;
+}
