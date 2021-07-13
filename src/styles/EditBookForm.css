@@ -1,0 +1,7 @@
+.edit {
+  padding: 2rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
