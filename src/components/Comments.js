@@ -14,16 +14,16 @@ function Comments({ toggleComments }) {
   };
   return (
     toggleComments
-        && (
-        <div className="comments-div">
-          <form onSubmit={handleFormSubmit}>
-            <input type="text" className="form-control comments-input" placeholder="enter your comment..." onChange={handleInputChange} value={comment} />
-            <button className="btn btn-primary btn-sm" type="submit">Post</button>
-            {comments.map((comm) => <li key={Math.random() * 1000}>{comm}</li>)}
+    && (
+      <div className="comments-div">
+        <form onSubmit={handleFormSubmit}>
+          <input type="text" className="form-control comments-input" placeholder="enter your comment..." onChange={handleInputChange} value={comment} />
+          <button className="btn btn-primary btn-sm" type="submit">Post</button>
+          {comments.map((comm) => <li key={Math.random() * 1000}>{comm}</li>)}
 
-          </form>
-        </div>
-        )
+        </form>
+      </div>
+    )
   );
 }
 
