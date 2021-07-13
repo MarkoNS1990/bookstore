@@ -24,10 +24,8 @@ function EditBookForm({ book, toggleShow, setToggleShow }) {
     e.preventDefault();
     if (title !== '') {
       const editedBook = { id: book.id, title, category };
-      console.log(editedBook);
       dispatch({ type: 'EDIT_BOOK', editedBook });
       setCategory('Action');
-      setTitle('');
       setError('');
       setToggleShow(false);
     } else {
@@ -38,21 +36,21 @@ function EditBookForm({ book, toggleShow, setToggleShow }) {
   return (
     toggleShow
     && (
-    <div>
-      <div className="form-div edit">
-        <hr />
-        <h3 className="form-title">EDIT BOOK</h3>
-        <form onSubmit={onFormSubmit} className="form">
-          <input className="title-input form-control" type="text" id="title" placeholder="Book title" onChange={handleInputChange} value={title} />
-          <select className="form-select" onChange={handleSelectChange} value={category} placeholder="Category">
-            {categories.map((cat) => <option key={Math.random() * 1000}>{cat}</option>)}
+      <div>
+        <div className="form-div edit">
+          <hr />
+          <h3 className="form-title">EDIT BOOK</h3>
+          <form onSubmit={onFormSubmit} className="form">
+            <input className="title-input form-control" type="text" id="title" placeholder="Book title" onChange={handleInputChange} value={title} />
+            <select className="form-select" onChange={handleSelectChange} value={category} placeholder="Category">
+              {categories.map((cat) => <option key={Math.random() * 1000}>{cat}</option>)}
 
-          </select>
-          <button className="submit btn btn-primary chapter-btn" type="submit">Save</button>
-          <p>{error}</p>
-        </form>
+            </select>
+            <button className="submit btn btn-primary chapter-btn" type="submit">Save</button>
+            <p>{error}</p>
+          </form>
+        </div>
       </div>
-    </div>
     )
   );
 }

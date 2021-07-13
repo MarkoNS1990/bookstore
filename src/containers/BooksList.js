@@ -5,7 +5,6 @@ import Book from '../components/Book';
 function BooksList() {
   const filter = useSelector((state) => state.filter);
   const books = useSelector((state) => state.books);
-  console.log(books);
   const dispatch = useDispatch();
   let filtered = books;
   if (filter !== 'All') {
