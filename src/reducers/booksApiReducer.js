@@ -11,6 +11,7 @@ const initialState = {
 };
 
 export default function bookReducer(state = initialState, action) {
+  console.log(action);
   switch (action.type) {
     case FETCH_BOOKS_BEGIN:
       return {
@@ -43,7 +44,7 @@ export default function bookReducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        items: [state.items.filter((book) => book !== action.book)],
+        items: [...state.items.filter((book) => book !== action.book)],
       };
     case 'EDIT_BOOK': {
       const previousBook = state.items.filter((book) => book.id === action.editedBook.id)[0];

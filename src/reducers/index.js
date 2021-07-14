@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import books from './books';
+// import books from './books';
 import filter from './filter';
 import bookReducer from './booksApiReducer';
 
 const reducer = combineReducers({
-  books,
+  // books,
   filter,
   bookReducer,
 });

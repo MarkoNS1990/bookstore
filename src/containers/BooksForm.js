@@ -19,13 +19,11 @@ function BooksForm() {
     setCategory(e.target.value);
   };
 
-  let book;
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (title !== '' && category !== 'Category') {
-      book = { id: Math.ceil(Math.random() * 1000), title, category };
-      dispatch({ type: 'CREATE_BOOK', book });
-      dispatch(fetchAddBook(book));
+      const newBook = { id: Math.ceil(Math.random() * 1000), title, category };
+      dispatch(fetchAddBook(newBook));
       setCategory('Category');
       setTitle('');
       setError('');
