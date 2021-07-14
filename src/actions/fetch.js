@@ -1,5 +1,5 @@
 import {
-  fetchBooksSuccess, fetchBooksFailure, fetchBooksBegin, createBook, removeBook,
+  fetchBooksSuccess, fetchBooksFailure, fetchBooksBegin, createBook, removeBook, editBook,
 } from './index';
 
 function handleErrors(response) {
@@ -47,19 +47,22 @@ export function fetchRemoveBook(book) {
     .then((res) => res)
     .then((json) => {
       dispatch(removeBook(book));
-      json.json();
+      return json.json();
     })
     .catch((error) => error);
 }
 
 export function fetchUpdateBook(book) {
-  return fetch(`https://good-bookstore-api.herokuapp.com/books?id=${book.id}`, {
+  return (dispatch) => fetch(`https://good-bookstore-api.herokuapp.com/books?id=${book.id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ title: book.title, category: book.category }),
   })
     .then(handleErrors)
     .then((res) => res)
-    .then((json) => json.json())
+    .then((json) => {
+      dispatch(editBook(book));
+      return json.json();
+    })
     .catch((error) => error);
 }

@@ -25,8 +25,7 @@ function EditBookForm({ book, toggleShow, setToggleShow }) {
     e.preventDefault();
     if (title !== '') {
       const editedBook = { id: book.id, title, category };
-      dispatch({ type: 'EDIT_BOOK', editedBook });
-      fetchUpdateBook(book);
+      dispatch(fetchUpdateBook(editedBook));
       setCategory('Action');
       setError('');
       setToggleShow(false);
