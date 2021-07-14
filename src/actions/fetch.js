@@ -1,0 +1,40 @@
+import { fetchBooksSuccess, fetchBooksFailure, fetchBooksBegin } from './index';
+
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+}
+
+export default function fetchBooks() {
+  return (dispatch) => {
+    dispatch(fetchBooksBegin());
+    return fetch('https://good-bookstore-api.herokuapp.com')
+      .then(handleErrors)
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch(fetchBooksSuccess(json));
+        return json;
+      })
+      .catch((error) => dispatch(fetchBooksFailure(error)));
+  };
+}
+
+export function fetchAddBook(book) {
+  return fetch('https://good-bookstore-api.herokuapp.com/books', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ title: book.title, category: book.category }),
+  })
+    .then(handleErrors)
+    .then((res) => {
+      console.log(res);
+      return res;
+    })
+    .then((json) => {
+      console.log(json);
+      return json.json();
+    })
+    .catch((error) => error);
+}
