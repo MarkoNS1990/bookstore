@@ -22,19 +22,39 @@ export default function fetchBooks() {
 }
 
 export function fetchAddBook(book) {
-  return fetch('https://good-bookstore-api.herokuapp.com/books', {
+  return (dispatch) => fetch('https://good-bookstore-api.herokuapp.com/books', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ title: book.title, category: book.category }),
   })
     .then(handleErrors)
-    .then((res) => {
-      console.log(res);
-      return res;
-    })
+    .then((res) => res)
     .then((json) => {
-      console.log(json);
-      return json.json();
+      dispatch(fetchBooksSuccess(json));
+      return json;
     })
+    .catch((error) => dispatch(fetchBooksFailure(error)));
+}
+
+export function fetchRemoveBook(book) {
+  return fetch(`https://good-bookstore-api.herokuapp.com/books?id=${book.id}`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+  })
+    .then(handleErrors)
+    .then((res) => res)
+    .then((json) => json.json())
+    .catch((error) => error);
+}
+
+export function fetchUpdateBook(book) {
+  return fetch(`https://good-bookstore-api.herokuapp.com/books?id=${book.id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ title: book.title, category: book.category }),
+  })
+    .then(handleErrors)
+    .then((res) => res)
+    .then((json) => json.json())
     .catch((error) => error);
 }

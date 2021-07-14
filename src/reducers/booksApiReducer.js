@@ -33,8 +33,30 @@ export default function bookReducer(state = initialState, action) {
         error: action.payload.error,
         items: [],
       };
+    case 'CREATE_BOOK':
+      return {
+        ...state,
+        loading: false,
+        items: [...state.items, action.book],
+      };
+    case 'REMOVE_BOOK':
+      return {
+        ...state,
+        loading: false,
+        items: [state.items.filter((book) => book !== action.book)],
+      };
+    case 'EDIT_BOOK': {
+      const previousBook = state.items.filter((book) => book.id === action.editedBook.id)[0];
+      state.items.splice(state.items.indexOf(previousBook), 1, action.editedBook);
+      return {
+        ...state,
+        loading: false,
+        items: state.items,
+      };
+    }
 
-    default:
+    default: {
       return state;
+    }
   }
 }

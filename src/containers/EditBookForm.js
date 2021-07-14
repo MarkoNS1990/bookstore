@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import '../styles/EditBookForm.css';
+import { fetchUpdateBook } from '../actions/fetch';
 
 function EditBookForm({ book, toggleShow, setToggleShow }) {
   const [title, setTitle] = useState(book.title);
@@ -25,6 +26,7 @@ function EditBookForm({ book, toggleShow, setToggleShow }) {
     if (title !== '') {
       const editedBook = { id: book.id, title, category };
       dispatch({ type: 'EDIT_BOOK', editedBook });
+      fetchUpdateBook(book);
       setCategory('Action');
       setError('');
       setToggleShow(false);
