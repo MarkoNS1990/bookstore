@@ -3,3 +3,11 @@
   margin: auto;
   margin-top: 20px;
 }
+
+.comment {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: white;
+  border-radius: 5rem;
+}

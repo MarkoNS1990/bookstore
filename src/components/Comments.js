@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { fetchAddComment } from '../actions/fetch';
+import '../styles/Comments.css';
 
 function Comments({ toggleComments, commentsApi, bookApi }) {
   const dispatch = useDispatch();
@@ -32,11 +33,11 @@ function Comments({ toggleComments, commentsApi, bookApi }) {
           <input type="text" className="form-control comments-input" placeholder="enter your comment..." onChange={handleInputChange} value={comment} />
           <button className="btn btn-primary btn-sm" type="submit">Post</button>
           {commentsApi && commentsApi.map((comm) => (
-            <li key={Math.random() * 1000}>
+            <div className="comment" key={Math.random() * 1000}>
               {comm.content}
-            </li>
+            </div>
           ))}
-          {comments.map((comm) => <li key={Math.random() * 1000}>{comm}</li>)}
+          {comments.map((comm) => <div className="comment" key={Math.random() * 1000}>{comm}</div>)}
 
         </form>
       </div>
