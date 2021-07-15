@@ -31,7 +31,11 @@ function Comments({ toggleComments, commentsApi, bookApi }) {
         <form onSubmit={handleFormSubmit}>
           <input type="text" className="form-control comments-input" placeholder="enter your comment..." onChange={handleInputChange} value={comment} />
           <button className="btn btn-primary btn-sm" type="submit">Post</button>
-          {commentsApi.map((comm) => <li key={Math.random() * 1000}>{comm.content}</li>)}
+          {commentsApi && commentsApi.map((comm) => (
+            <li key={Math.random() * 1000}>
+              {comm.content}
+            </li>
+          ))}
           {comments.map((comm) => <li key={Math.random() * 1000}>{comm}</li>)}
 
         </form>
@@ -39,13 +43,16 @@ function Comments({ toggleComments, commentsApi, bookApi }) {
     )
   );
 }
+Comments.defaultProps = {
+  commentsApi: [],
+};
 
 Comments.propTypes = {
   toggleComments: PropTypes.bool.isRequired,
   commentsApi: PropTypes.arrayOf(PropTypes.shape({
     content: PropTypes.string.isRequired,
     book_id: PropTypes.number.isRequired,
-  })).isRequired,
+  })),
   bookApi: PropTypes.shape({
     id: PropTypes.number.isRequired,
 
