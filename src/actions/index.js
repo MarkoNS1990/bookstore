@@ -17,6 +17,10 @@ const editBook = (book) => ({
   type: 'EDIT_BOOK',
   book,
 });
+const createComment = (comment) => ({
+  type: 'CREATE_COMMENT',
+  comment,
+});
 
 export const FETCH_BOOKS_BEGIN = 'FETCH_BOOKS_BEGIN';
 export const FETCH_BOOKS_SUCCESS = 'FETCH_BOOKS_SUCCESS';
@@ -37,5 +41,5 @@ export const fetchBooksFailure = (error) => ({
 });
 
 export {
-  createBook, removeBook, changeFilter, editBook,
+  createBook, removeBook, changeFilter, editBook, createComment,
 };

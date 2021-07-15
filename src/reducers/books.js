@@ -15,6 +15,7 @@ const books = (state = initialState, action) => {
       state.splice(state.indexOf(previousBook), 1, action.editedBook);
       return [...state];
     }
+
     default:
       return state;
   }

@@ -54,6 +54,11 @@ export default function bookReducer(state = initialState, action) {
         items: [...state.items],
       };
     }
+    case 'CREATE_COMMENT': {
+      // const previousBook = state.filter((book) => book.id === action.editedBook.id)[0];
+      console.log(action);
+      return state;
+    }
 
     default: {
       return state;

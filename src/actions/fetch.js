@@ -1,5 +1,6 @@
 import {
   fetchBooksSuccess, fetchBooksFailure, fetchBooksBegin, createBook, removeBook, editBook,
+  createComment,
 } from './index';
 
 function handleErrors(response) {
@@ -65,4 +66,19 @@ export function fetchUpdateBook(book) {
       return json.json();
     })
     .catch((error) => error);
+}
+
+export function fetchAddComment(comment) {
+  return (dispatch) => fetch(`https://good-bookstore-api.herokuapp.com/books/comments?id=${comment.book_id}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ content: comment.content, book_id: comment.book_id }),
+  })
+    .then(handleErrors)
+    .then((res) => res)
+    .then((json) => {
+      dispatch(createComment(comment));
+      return json;
+    })
+    .catch((error) => dispatch(fetchBooksFailure(error)));
 }
