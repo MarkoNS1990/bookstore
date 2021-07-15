@@ -7,7 +7,6 @@ import Comments from './Comments';
 import '../styles/Comments.css';
 
 function Book({ book, handleRemoveBook }) {
-  console.log(book);
   const { title, category } = book;
   const [toggleShow, setToggleShow] = useState(false);
   const [toggleComments, setToggleComments] = useState(false);

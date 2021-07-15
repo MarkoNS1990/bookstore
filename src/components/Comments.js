@@ -9,7 +9,6 @@ function Comments({ toggleComments, commentsApi, bookApi }) {
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 
-  console.log(commentsApi);
   const handleInputChange = (e) => {
     setComment(e.target.value);
   };
@@ -20,7 +19,6 @@ function Comments({ toggleComments, commentsApi, bookApi }) {
       content: comment,
       book_id: bookApi.id,
     };
-    console.log(newComment);
     dispatch(fetchAddComment(newComment));
     setComments([...comments, comment]);
     setComment('');

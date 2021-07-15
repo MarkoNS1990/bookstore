@@ -11,7 +11,6 @@ function BooksList() {
     dispatch(fetchBooks());
   }, []);
   const books = useSelector((state) => state.bookReducer.items);
-  console.log(books);
   let filtered = books;
   if (filter !== 'All') {
     filtered = books.filter((book) => book.category === filter);
