@@ -48,7 +48,12 @@ function Book({ book, handleRemoveBook }) {
 
       </div>
       <EditBookForm book={book} toggleShow={toggleShow} setToggleShow={setToggleShow} />
-      <Comments setToggleComments={setToggleComments} toggleComments={toggleComments} />
+      <Comments
+        setToggleComments={setToggleComments}
+        toggleComments={toggleComments}
+        commentsApi={book.comments}
+        bookApi={book}
+      />
     </>
   );
 }
@@ -58,9 +63,14 @@ Book.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    comments: PropTypes.arrayOf(PropTypes.shape({
+      content: PropTypes.string.isRequired,
+      book_id: PropTypes.number.isRequired,
+    })).isRequired,
 
   }).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
+
 };
 
 export default Book;
