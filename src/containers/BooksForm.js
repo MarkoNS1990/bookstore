@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import '../styles/BooksForm.css';
+import { fetchAddBook } from '../actions/fetch';
 
 function BooksForm() {
   const dispatch = useDispatch();
@@ -21,8 +22,8 @@ function BooksForm() {
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (title !== '' && category !== 'Category') {
-      const book = { id: Math.ceil(Math.random() * 1000), title, category };
-      dispatch({ type: 'CREATE_BOOK', book });
+      const newBook = { id: Math.ceil(Math.random() * 1000), title, category };
+      dispatch(fetchAddBook(newBook));
       setCategory('Category');
       setTitle('');
       setError('');

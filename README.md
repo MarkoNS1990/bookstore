@@ -2,7 +2,8 @@
 
 ## Description
 
-Bookstore project for managing books.
+Bookstore project for managing all CRUD operations with books.
+This applications works with an RESTful [bookstore api](https://github.com/iliebabcenco/bookstore-api) which manages all CRUD operations with PostgreSQL.
 
 ## Built With
 
@@ -30,7 +31,7 @@ Bookstore project for managing books.
 
 ### Deployment
 
-This application is deployed on [Heroku](https://best-bookstore.herokuapp.com/).
+This application is deployed on Heroku [Check Live Version](https://best-bookstore.herokuapp.com/).
 
 ## Authors
 
